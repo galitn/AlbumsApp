@@ -7,8 +7,10 @@ import { PhotosListComponent } from './components/photos-list/photos-list.compon
 import { MainComponent } from './components/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
 import { ThreeDotsPipe } from './pipes/three-dots.pipe';
+import { SearchPhotosComponent } from './components/search-photos/search-photos.component';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +18,13 @@ import { ThreeDotsPipe } from './pipes/three-dots.pipe';
     PhotosListComponent,
     MainComponent,
     ThreeDotsPipe,
+    SearchPhotosComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
-    MatCardModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
