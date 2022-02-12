@@ -8,6 +8,7 @@ import { photo } from 'src/app/models/photo.model';
 })
 export class PhotoDetailsComponent implements OnInit {
 @Input() photo: photo;
+@Input() showAlbumID: boolean;
 @Input() width: string =  '270px';
   constructor() { }
 

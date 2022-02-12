@@ -3,11 +3,12 @@
     <div class="close-dialog-button" (click)="isOpenDialog = false">X</div>
     <app-photo-details
       [width]="'500px'"
+      [showAlbumID]="true"
       [photo]="selectedPhoto"
     ></app-photo-details>
   </div>
   <div *ngFor="let photo of photos">
-    <app-photo-details
+    <app-photo-details class="photo-details"
       (click)="onOpenDialog(photo)"
       [photo]="photo"
     ></app-photo-details>

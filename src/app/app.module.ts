@@ -13,6 +13,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SearchAlbumsComponent } from './search-albums/search-albums.component';
 import {MatInputModule} from '@angular/material/input'; 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

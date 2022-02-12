@@ -8,7 +8,7 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  padding: 10px;
+  padding: 20px;
   background-color: #183346;
   border-radius: 10px;
   border: 1px solid #476b8b;
@@ -19,4 +19,7 @@
 .close-dialog-button:hover {
   cursor: pointer;
   color: #254864;
+}
+.photo-details:hover{
+  cursor: pointer;
 }
