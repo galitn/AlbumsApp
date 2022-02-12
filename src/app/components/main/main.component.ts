@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { album } from 'src/app/models/album.model';
 import { photo } from 'src/app/models/photo.model';
 import { AlbumService } from 'src/app/services/album.service';
@@ -11,17 +11,29 @@ import { AlbumService } from 'src/app/services/album.service';
 })
 export class MainComponent implements OnInit {
   albumID: number = 1;
-  photos$: Observable<photo[]> = new Observable<photo[]>();
+  isLoading: boolean = false;
+  photos$: BehaviorSubject<photo[]> = new BehaviorSubject<photo[]>([]);
   albums$: Observable<album[]> = new Observable<album[]>();
   constructor(private albumService: AlbumService) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.albums$ = this.albumService.loadAlbums();
-    this.photos$ = this.albumService.loadPhotosByAlbum(this.albumID);
+    this.loadPhotosByAlbum(this.albumID);
+   
   }
 
   onSelectedAlbumChanged(selectedAlbum: number) {
+    this.isLoading = true;
     this.albumID = selectedAlbum;
-    this.photos$ = this.albumService.loadPhotosByAlbum(this.albumID);
+    this.loadPhotosByAlbum(this.albumID);
+    this.isLoading = false;
+  }
+
+  loadPhotosByAlbum(albumID: number){
+    this.albumService.loadPhotosByAlbum(albumID).subscribe((photos) => {
+      this.photos$.next(photos);
+      this.isLoading = false;
+    });
   }
 }

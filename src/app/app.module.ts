@@ -6,10 +6,12 @@ import { PhotoDetailsComponent } from './components/photo-details/photo-details.
 import { PhotosListComponent } from './components/photos-list/photos-list.component';
 import { MainComponent } from './components/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThreeDotsPipe } from './pipes/three-dots.pipe';
 import { SearchPhotosComponent } from './components/search-photos/search-photos.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SearchAlbumsComponent } from './components/search-albums/search-albums.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import {MatSelectModule} from '@angular/material/select';
     MainComponent,
     ThreeDotsPipe,
     SearchPhotosComponent,
+    SearchAlbumsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatSelectModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

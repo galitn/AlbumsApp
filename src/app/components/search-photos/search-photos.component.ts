@@ -8,15 +8,8 @@ import { album } from 'src/app/models/album.model';
   styleUrls: ['./search-photos.component.css'],
 })
 export class SearchPhotosComponent implements OnInit {
-  selectedAlbum = 1;
-  @Input() albums$: Observable<album[]> = new Observable<album[]>();
-  @Output() selectedAlbumChanged: EventEmitter<number> = new EventEmitter<number>();
-  constructor() {}
+   constructor() {}
 
   ngOnInit(): void {}
 
-  onSelectedAlbumChanged(event: any) {
-   this.selectedAlbum = event.value;
-   this.selectedAlbumChanged.emit(this.selectedAlbum);
-  }
-}
+ }

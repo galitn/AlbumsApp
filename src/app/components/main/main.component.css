@@ -1,8 +1,15 @@
 .main-wrapper{
+  position: relative;
   background-color: #183346;
   padding: 10px;
 }
 .title{
     color: #cedff1;
     padding: 10px 0 ;
+}
+.loader{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin: 20px 0;
 }

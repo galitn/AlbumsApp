@@ -1,0 +1,8 @@
+<mat-form-field>
+    <mat-label>Select Album</mat-label>
+    <mat-select  [value]="selectedAlbum" (selectionChange)="onSelectedAlbumChanged($event)">
+      <mat-option *ngFor="let album of albums$ | async" [value]="album.id">
+        {{album?.id}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
