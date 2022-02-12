@@ -13,3 +13,6 @@
   transform: translate(-50%, 0);
   margin: 20px 0;
 }
+.search-photos, .search-albums{
+  padding: 10px;
+}

@@ -9,13 +9,12 @@ import { AlbumService } from 'src/app/services/album.service';
   styleUrls: ['./photos-list.component.css'],
 })
 export class PhotosListComponent implements OnInit {
-  @Input() photos$: Observable<photo[]> = new Observable<photo[]>();
+  @Input() photos: photo[] = [];
   isOpenDialog: boolean = false;
   selectedPhoto: photo;
   constructor(private albumService: AlbumService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   onOpenDialog(photo: photo) {
     if (!this.isOpenDialog) {
       this.isOpenDialog = true;

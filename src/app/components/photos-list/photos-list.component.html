@@ -6,7 +6,7 @@
       [photo]="selectedPhoto"
     ></app-photo-details>
   </div>
-  <div *ngFor="let photo of photos$ | async">
+  <div *ngFor="let photo of photos">
     <app-photo-details
       (click)="onOpenDialog(photo)"
       [photo]="photo"

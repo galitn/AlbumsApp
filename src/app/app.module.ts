@@ -11,8 +11,8 @@ import { ThreeDotsPipe } from './pipes/three-dots.pipe';
 import { SearchPhotosComponent } from './components/search-photos/search-photos.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { SearchAlbumsComponent } from './components/search-albums/search-albums.component';
-
+import { SearchAlbumsComponent } from './search-albums/search-albums.component';
+import {MatInputModule} from '@angular/material/input'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { SearchAlbumsComponent } from './components/search-albums/search-albums.
     HttpClientModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

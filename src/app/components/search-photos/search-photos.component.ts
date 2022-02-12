@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { observable, Observable } from 'rxjs';
-import { album } from 'src/app/models/album.model';
 
 @Component({
   selector: 'app-search-photos',
@@ -8,8 +6,12 @@ import { album } from 'src/app/models/album.model';
   styleUrls: ['./search-photos.component.css'],
 })
 export class SearchPhotosComponent implements OnInit {
-   constructor() {}
+  search: any;
+  @Output() searchTermChanged: EventEmitter<string> = new EventEmitter<string>();
+  constructor() {}
 
   ngOnInit(): void {}
-
- }
+  onSearchChange(event: any) {
+    this.searchTermChanged.emit(event.target.value);
+  }
+}

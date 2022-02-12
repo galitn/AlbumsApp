@@ -1,7 +1,14 @@
 <div class="main-wrapper">
-    <div class="title">Photo Album Page</div>
-    <app-search-albums [albums$]="albums$" (selectedAlbumChanged)="onSelectedAlbumChanged($event)"></app-search-albums>
-    <app-photos-list [photos$]="photos$"></app-photos-list>
-    <mat-spinner *ngIf="isLoading" class="loader"></mat-spinner>
-
+  <div class="title">Photo Album Page</div>
+  <app-search-photos
+    (searchTermChanged)="oneSearchTermChanged($event)"
+    class="search-photos"
+  ></app-search-photos>
+  <app-search-albums
+    class="search-albums"
+    [albums$]="albums$"
+    (selectedAlbumChanged)="onSelectedAlbumChanged($event)"
+  ></app-search-albums>
+  <app-photos-list [photos]="photos"></app-photos-list>
+  <mat-spinner *ngIf="isLoading" class="loader"></mat-spinner>
 </div>

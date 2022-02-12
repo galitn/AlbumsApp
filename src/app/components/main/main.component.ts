@@ -12,7 +12,8 @@ import { AlbumService } from 'src/app/services/album.service';
 export class MainComponent implements OnInit {
   albumID: number = 1;
   isLoading: boolean = false;
-  photos$: BehaviorSubject<photo[]> = new BehaviorSubject<photo[]>([]);
+  photos: photo[] = [];
+  filteredPhotos: photo[] = [];
   albums$: Observable<album[]> = new Observable<album[]>();
   constructor(private albumService: AlbumService) {}
 
@@ -29,10 +30,12 @@ export class MainComponent implements OnInit {
     this.loadPhotosByAlbum(this.albumID);
     this.isLoading = false;
   }
-
+  oneSearchTermChanged(searchTerm: string){
+    this.albumService.searchPhotos(searchTerm);
+  }
   loadPhotosByAlbum(albumID: number){
     this.albumService.loadPhotosByAlbum(albumID).subscribe((photos) => {
-      this.photos$.next(photos);
+      this.photos  = photos;
       this.isLoading = false;
     });
   }
