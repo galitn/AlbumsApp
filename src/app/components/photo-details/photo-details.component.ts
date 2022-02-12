@@ -8,6 +8,7 @@ import { photo } from 'src/app/models/photo.model';
 })
 export class PhotoDetailsComponent implements OnInit {
 @Input() photo: photo;
+@Input() width: string =  '270px';
   constructor() { }
 
   ngOnInit(): void {

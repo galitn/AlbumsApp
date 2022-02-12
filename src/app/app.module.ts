@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { ThreeDotsPipe } from './pipes/three-dots.pipe';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,12 @@ import { ThreeDotsPipe } from './pipes/three-dots.pipe';
     MainComponent,
     ThreeDotsPipe,
   ],
-  imports: [BrowserModule, HttpClientModule, NoopAnimationsModule, MatCardModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatCardModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

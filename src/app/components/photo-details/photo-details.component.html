@@ -1,11 +1,11 @@
-<div class="card">
+<div class="card" [style.width]="width" >
   <div class="image-wrapper">
-    <img  class="image" [src]="photo?.thumbnailUrl" />
+    <img class="image" [src]="photo?.thumbnailUrl" />
   </div>
   <div class="card-content">
-    <div class="photo-title">{{photo?.title | threeDots}}</div>
-    <div class="photo-id" *ngIf="photo?.id">id: {{photo?.id}}</div>
-</div>
+    <div class="photo-title">{{ photo?.title | threeDots }}</div>
+    <div class="photo-id" *ngIf="photo?.id">id: {{ photo?.id }}</div>
+  </div>
   <div class="card-footer">
     <div>{{ photo?.url }}</div>
   </div>

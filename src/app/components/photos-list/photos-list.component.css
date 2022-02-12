@@ -1,5 +1,22 @@
-.photos-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px
+.photos-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.photo-modal {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px;
+  background-color: #183346;
+  border-radius: 10px;
+  border: 1px solid #476b8b;
+}
+.close-dialog-button {
+  color: #476b8b;
+}
+.close-dialog-button:hover {
+  cursor: pointer;
+  color: #254864;
 }

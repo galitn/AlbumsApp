@@ -1,5 +1,15 @@
 <div class="photos-wrapper">
+  <div *ngIf="isOpenDialog" class="photo-modal">
+    <div class="close-dialog-button" (click)="isOpenDialog = false">X</div>
+    <app-photo-details
+      [width]="'500px'"
+      [photo]="selectedPhoto"
+    ></app-photo-details>
+  </div>
   <div *ngFor="let photo of photos$ | async">
-    <app-photo-details [photo]="photo"></app-photo-details>
+    <app-photo-details
+      (click)="onOpenDialog(photo)"
+      [photo]="photo"
+    ></app-photo-details>
   </div>
 </div>
