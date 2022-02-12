@@ -4,6 +4,7 @@
     padding: 2px;
     background-color: #254864;
     color: white;
+    margin: 10px 0;
   }
   .image-wrapper{
       display: flex;
