@@ -8,12 +8,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AlbumService {
+  albumsUrl = `https://jsonplaceholder.typicode.com/albums`;
   photos: photo[] = [];
   filteredPhotos$: BehaviorSubject<photo[]> = new BehaviorSubject<photo[]>([]);
   constructor(private http: HttpClient) {}
 
   loadPhotosByAlbum(albumID: number = 1) {
-    let url = `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`;
+    const url = `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`;
     this.http.get<photo[]>(url).subscribe((photos) => {
       this.photos = photos;
       this.filteredPhotos$.next(photos);
@@ -27,7 +28,6 @@ export class AlbumService {
     this.filteredPhotos$.next(filteredPhotos);
   }
   loadAlbums() {
-    let url = `https://jsonplaceholder.typicode.com/albums`;
-    return this.http.get<album[]>(url);
+    return this.http.get<album[]>(this.albumsUrl);
   }
 }
