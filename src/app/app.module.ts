@@ -6,6 +6,9 @@ import { PhotoDetailsComponent } from './components/photo-details/photo-details.
 import { PhotosListComponent } from './components/photos-list/photos-list.component';
 import { MainComponent } from './components/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { ThreeDotsPipe } from './pipes/three-dots.pipe';
 
 @NgModule({
   declarations: [
@@ -13,13 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
     PhotoDetailsComponent,
     PhotosListComponent,
     MainComponent,
+    ThreeDotsPipe,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule 
-
-  ],
+  imports: [BrowserModule, HttpClientModule, NoopAnimationsModule, MatCardModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,1 +1,12 @@
-<div>{{photo?.title}}</div>
+<div class="card">
+  <div class="image-wrapper">
+    <img  class="image" [src]="photo?.thumbnailUrl" />
+  </div>
+  <div class="card-content">
+    <div class="photo-title">{{photo?.title | threeDots}}</div>
+    <div class="photo-id" *ngIf="photo?.id">id: {{photo?.id}}</div>
+</div>
+  <div class="card-footer">
+    <div>{{ photo?.url }}</div>
+  </div>
+</div>

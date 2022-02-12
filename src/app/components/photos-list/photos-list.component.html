@@ -1,3 +1,5 @@
-<div *ngFor="let photo of (photos$ | async)">
+<div class="photos-wrapper">
+  <div *ngFor="let photo of photos$ | async">
     <app-photo-details [photo]="photo"></app-photo-details>
+  </div>
 </div>

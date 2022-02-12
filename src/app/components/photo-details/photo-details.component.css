@@ -1,0 +1,39 @@
+.card {
+    width: 270px;
+    max-height: 600px;
+    padding: 2px;
+    background-color: #254864;
+    color: white;
+  }
+  .image-wrapper{
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      background-color: #345979;
+  }
+  .image{
+      width: 50px;
+      height: 50px;
+      border-radius: 20px;
+  }
+  .card-content{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 10px;
+  }
+  .photo-title{
+    font-size: 17px;
+  }
+  .photo-id{
+    color: #597da0;
+    font-size: 14px;
+  }
+  .card-footer{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+    font-size: 13px;
+    background-color: #183246;
+    color: #597da0;
+  }
