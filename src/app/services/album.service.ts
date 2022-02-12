@@ -11,6 +11,6 @@ export class AlbumService {
 
   loadPhotosByAlbum(albumID: number = 1){
     let url = `https://jsonplaceholder.typicode.com/albums/${albumID}/photos`
-    return this.http.get<photo>(url);
+    return this.http.get<photo[]>(url);
   }
 }

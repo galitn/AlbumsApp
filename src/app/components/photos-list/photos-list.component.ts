@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { photo } from 'src/app/models/photo.model';
 import { AlbumService } from 'src/app/services/album.service';
 
 @Component({
@@ -8,12 +10,11 @@ import { AlbumService } from 'src/app/services/album.service';
 })
 export class PhotosListComponent implements OnInit {
   albumID: number = 1;
+  photos$: Observable<photo[]> = new Observable<photo[]>();
   constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
-    this.albumService.loadPhotosByAlbum(this.albumID).subscribe(album => {
-      console.log(album);
-    })
+    this.photos$ =  this.albumService.loadPhotosByAlbum(this.albumID);
   }
 
 }
